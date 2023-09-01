@@ -1,47 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <title>
-        Email Spam Classifier
-    </title>
-    <style>
-        body {
-            text-align: center;
-        }
-
-        button {
-            color: aliceblue;
-            background-color: blue;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos de Salud</title>
 </head>
-
 <body>
-    <h1>Email Spam Classifier</h1>
-    <div>
-        <form method="post" action="/predict">
-            <textarea rows="12" cols="60" name="content" placeholder="Enter your email here"
-                autocomplete="off">{{ email }}</textarea>
-            <div>
-                <button type="submit">
-                    Button
-                </button>
-                <a href="/">Reset</a>
-            </div>
-        </form>
+    <h1>Formulario de Datos de Salud</h1>
+    <form action="/predict" method="post">
+        <label for="HighBP">Presión arterial alta:</label>
+        <input type="text" name="HighBP"><br>
 
-    </div>
-    <div>
-        {% if prediction %}
-        {% if prediction == 1 %}
-        <h2 style="color: red">Spam</h2>
-        {% else %}
-        <h2 style="color: green">Not Spam</h2>
-        {% endif %}
-        {% endif %}
-        <!-- <p id="display"></p> -->
-    </div>
+        <label for="HighChol">Colesterol alto:</label>
+        <input type="text" name="HighChol"><br>
+
+        <label for="CholCheck">Control de colesterol:</label>
+        <input type="text" name="CholCheck"><br>
+
+        <label for="BMI">Índice de masa corporal (BMI):</label>
+        <input type="text" name="BMI"><br>
+
+        <label for="Smoker">Fumador:</label>
+        <input type="text" name="Smoker"><br>
+
+        <label for="Stroke">Derrame cerebral:</label>
+        <input type="text" name="Stroke"><br>
+
+        <label for="HeartDiseaseorAttack">Enfermedad cardíaca o ataque al corazón:</label>
+        <input type="text" name="HeartDiseaseorAttack"><br>
+
+        <label for="PhysActivity">Actividad física:</label>
+        <input type="text" name="PhysActivity"><br>
+
+        <label for="Fruits">Consumo de frutas:</label>
+        <input type="text" name="Fruits"><br>
+
+        <label for="Veggies">Consumo de verduras:</label>
+        <input type="text" name="Veggies"><br>
+
+        <label for="HvyAlcoholConsump">Consumo de alcohol excesivo:</label>
+        <input type="text" name="HvyAlcoholConsump"><br>
+
+        <label for="PhysHlth">Salud física:</label>
+        <input type="text" name="PhysHlth"><br>
+
+        <label for="DiffWalk">Dificultad para caminar:</label>
+        <input type="text" name="DiffWalk"><br>
+
+        <label for="Sex">Género:</label>
+        <input type="text" name="Sex"><br>
+
+        <label for="Age">Edad:</label>
+        <input type="text" name="Age"><br>
+
+        <input type="submit" value="Enviar">
+    </form>
 </body>
-
 </html>
