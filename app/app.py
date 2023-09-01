@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from model import model_predict
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 @app.route("/")
 def home():
