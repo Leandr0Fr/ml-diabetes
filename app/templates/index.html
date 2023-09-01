@@ -4,56 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Datos de Salud</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Formulario de Datos de Salud</h1>
-    <form action="/predict" method="POST">
-        <label for="HighBP">Presión arterial alta:</label>
-        <input type="text" name="HighBP"><br>
+    <main class="form-box">
+        <h1>Formulario de Datos de Salud</h1>
+        <form class="form" action="/predict" method="POST">
 
-        <label for="HighChol">Colesterol alto:</label>
-        <input type="text" name="HighChol"><br>
+            <label for="BMI">Índice de masa corporal (BMI):</label>
+            <input class="field-input" type="number" name="BMI"><br>
 
-        <label for="CholCheck">Control de colesterol:</label>
-        <input type="text" name="CholCheck"><br>
+            <label for="Age">Edad:</label>
+            <input class="field-input" type="number" name="Age"><br>
 
-        <label for="BMI">Índice de masa corporal (BMI):</label>
-        <input type="text" name="BMI"><br>
+            <label for="PhysHlth">Salud física:</label>
+            <input class="field-input" type="number" name="PhysHlth"><br>
 
-        <label for="Smoker">Fumador:</label>
-        <input type="text" name="Smoker"><br>
+            <label for="Sex">Género:</label>
+            <input class="field-input" type="text" name="Sex"><br>
 
-        <label for="Stroke">Derrame cerebral:</label>
-        <input type="text" name="Stroke"><br>
+            <label for="HighBP">Presión arterial alta:</label>
+            <input class="check-input" type="checkbox" name="HighBP"><br>
 
-        <label for="HeartDiseaseorAttack">Enfermedad cardíaca o ataque al corazón:</label>
-        <input type="text" name="HeartDiseaseorAttack"><br>
+            <label for="HighChol">Colesterol alto:</label>
+            <input class="check-input" type="checkbox" name="HighChol"><br>
 
-        <label for="PhysActivity">Actividad física:</label>
-        <input type="text" name="PhysActivity"><br>
+            <label for="CholCheck">Control de colesterol:</label>
+            <input class="check-input" type="checkbox" name="CholCheck"><br>
 
-        <label for="Fruits">Consumo de frutas:</label>
-        <input type="text" name="Fruits"><br>
+            <label for="Smoker">Fumador:</label>
+            <input class="check-input" type="checkbox" name="Smoker"><br>
 
-        <label for="Veggies">Consumo de verduras:</label>
-        <input type="text" name="Veggies"><br>
+            <label for="Stroke">Derrame cerebral:</label>
+            <input class="check-input" type="checkbox" name="Stroke"><br>
 
-        <label for="HvyAlcoholConsump">Consumo de alcohol excesivo:</label>
-        <input type="text" name="HvyAlcoholConsump"><br>
+            <label for="HeartDiseaseorAttack">Enfermedad cardíaca o ataque al corazón:</label>
+            <input class="check-input" type="checkbox" name="HeartDiseaseorAttack"><br>
 
-        <label for="PhysHlth">Salud física:</label>
-        <input type="text" name="PhysHlth"><br>
+            <label for="PhysActivity">Actividad física:</label>
+            <input class="check-input" type="checkbox" name="PhysActivity"><br>
 
-        <label for="DiffWalk">Dificultad para caminar:</label>
-        <input type="text" name="DiffWalk"><br>
+            <label for="Fruits">Consumo de frutas:</label>
+            <input class="check-input" type="checkbox" name="Fruits"><br>
 
-        <label for="Sex">Género:</label>
-        <input type="text" name="Sex"><br>
+            <label for="Veggies">Consumo de verduras:</label>
+            <input class="check-input" type="checkbox" name="Veggies"><br>
 
-        <label for="Age">Edad:</label>
-        <input type="text" name="Age"><br>
+            <label for="HvyAlcoholConsump">Consumo de alcohol excesivo:</label>
+            <input class="check-input" type="checkbox" name="HvyAlcoholConsump"><br>
 
-        <input type="submit" value="Enviar">
-    </form>
+            <label for="DiffWalk">Dificultad para caminar:</label>
+            <input class="check-input" type="checkbox" name="DiffWalk"><br>
+
+            <input class="btn" type="submit" value="Enviar">
+        </form>
+    </main>
 </body>
 </html>

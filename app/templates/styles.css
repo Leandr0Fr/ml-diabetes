@@ -1,0 +1,89 @@
+* {
+    margin: 0; 
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+:root {
+    --color-darker: #FBA1B7;
+    --color-dark: #FFD1DA;
+    --color-light: #FFF0F5;
+    --color-highlight: #FFDBAA;
+    --font-xlarge: 2.5em;
+    --font-large: 1.5em;
+    --font-medium: 1.3em;
+    --font-small: 1.2em;
+    --font-xsmall: .9em;
+    --color-text-light: #ECECEC;
+}
+
+html {
+    background-color: var(--color-light); 
+    margin: auto;
+}
+
+h2 {
+    margin: 1em 0;
+}
+
+.form-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 600px;
+    margin: 0px 16px ;
+}
+
+.form{
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--color-darker);
+    border-radius: 20px;
+}
+
+label {
+    margin-left: .5em;
+    flex: 50%;
+}
+
+.field-input {
+    flex: 50%;
+    margin: .5em 0 2em 0;
+    border-radius: 20px;
+    padding: 1em;
+    min-width: 300px;
+    border: 0;
+    background-color: var(--color-dark);
+}
+
+label + .check-input {
+    display:flex;
+    flex-direction:row;
+}
+
+.check-input{
+
+}
+
+input::placeholder {
+    opacity: .8;
+}
+
+input:focus {
+    outline: 2px dashed var(--color-light);
+}
+
+.btn {
+    min-width: fit-content;
+    width: 20%;
+    align-self: end;
+    background-color: var(--color-highlight);
+    padding: 8px;
+    border-radius: 20px;
+    border: 0px;
+    cursor: pointer;
+}
