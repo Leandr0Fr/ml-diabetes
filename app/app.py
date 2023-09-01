@@ -9,6 +9,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     form = request.form.get('HighBP')
+    #buscar la manera de hacerlo en dataframe
     print(form)
     return form
 
