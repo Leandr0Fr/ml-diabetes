@@ -1,66 +1,56 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from model import model_predict
+
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
-# @app.route('/predict', methods=['POST'])
-# def predict():
-#     #Obtener los datos del formulario
-#     #Vemos si retornamos el mismo html modificando una variable
-#     #O otro html con el resultado y demas
-#     result = str(model_predict())
-#     return result
-    
-# Esto es lo nuevo, a partir de aca se guardan las variables en una lista
+    @app.route('/predict', methods=['POST'])
+    def predict():
+     #Obtener los datos del formulario
+     #Vemos si retornamos el mismo html modificando una variable
+     #O otro html con el resultado y demas
+     result = str(model_predict())
+     return result
 
-# dataList = []
+# Inicializa dos listas: una para las claves (nombres de las variables) y otra para los valores de las variables
+keys_list = []
+values_list = []
 
-# app = Flask(__name__)
+app = Flask(__name__)
 
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     if request.method == 'POST':
-#         diabetes = request.form.get('Diabetes')
-#         high_bp = request.form.get('HighBP')
-#         high_chol = request.form.get('HighChol')
-#         chol_check = request.form.get('CholCheck')
-#         bmi = request.form.get('BMI')
-#         smoker = request.form.get('Smoker')
-#         heartDesease = request.form.get('HeartDiseaseorAttack')
-#         physicalActivity = request.form.get('PhysActivity')
-#         fruits = request.form.get('Fruits')
-#         veggies = request.form.get('Veggies')
-#         alcoholic = request.form.get('HvyAlcoholConsump')
-#         physicalHealth = request.form.get('PhysHlth')
-#         walkingDifficulty = request.form.get('DiffWalk')
-#         sex = request.form.get('Sex')
-#         age = request.form.get('Age')
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        # Define las variables y sus nombres
+        variables = {
+            'BMI': request.form.get('BMI'),
+            'Age': request.form.get('Age'),
+            'PhysHlth': request.form.get('PhysHlth'),
+            'Sex': request.form.get('Sex'),
+            'HighBP': request.form.get('HighBP'),
+            'HighChol': request.form.get('HighChol'),
+            'CholCheck': request.form.get('CholCheck'),
+            'Smoker': request.form.get('Smoker'),
+            'HeartDiseaseorAttack': request.form.get('HeartDiseaseorAttack'),
+            'PhysActivity': request.form.get('PhysActivity'),
+            'Fruits': request.form.get('Fruits'),
+            'Veggies': request.form.get('Veggies'),
+            'HvyAlcoholConsump': request.form.get('HvyAlcoholConsump'),
+            'DiffWalk': request.form.get('DiffWalk'),
+           # 'Diabetes': request.form.get('Diabetes'),   
+        }
 
-#         form_data = {
-#             'Diabetes': diabetes,
-#             'HighBP': high_bp,
-#             'HighChol': high_chol,
-#             'CholCheck': chol_check,
-#             'BMI': bmi,
-#             'Smoker': smoker,
-#             'HeartDiseaseorAttack': heartDesease,
-#             'PhysActivity': physicalActivity,
-#             'Fruits': fruits,
-#             'Veggies': veggies,
-#             'HvyAlcoholConsump': alcoholic,
-#             'PhysHlth': physicalHealth,
-#             'DiffWalk': walkingDifficulty,
-#             'Sex': sex,
-#             'Age': age
-#         }
+        # Almacena las claves (nombres de las variables) en la lista de claves
+        keys_list.extend(variables.keys())
 
-#         dataList.append(form_data)
+        # Almacena los valores de las variables en la lista de valores
+        values_list.extend(variables.values())
 
-#         return render_template('results.html', form_data=form_data) 
-#     return render_template('form.html')
+        return render_template('results.html', variables=variables)
+    return render_template('form.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
