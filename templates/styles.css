@@ -24,7 +24,7 @@ html {
     margin: auto;
 }
 
-h2 {
+h1 {
     margin: 1em 0;
 }
 
@@ -33,7 +33,8 @@ h2 {
     flex-direction: column;
     align-items: center;
     min-width: 600px;
-    margin: 0px 16px ;
+    max-width: 1000px;
+    margin: 0px auto ;
 }
 
 .form{
@@ -45,13 +46,25 @@ h2 {
     border-radius: 20px;
 }
 
+.input-container {
+    border: 2px solid var(--color-dark);
+    border-radius: 20px;
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    flex: 40%;
+    align-items: center;
+    justify-content: space-between;
+}
+
 label {
     margin-left: .5em;
-    flex: 50%;
+    align-self: center;
+    flex:60%;
+    padding: 16px;
 }
 
 .field-input {
-    flex: 50%;
     margin: .5em 0 2em 0;
     border-radius: 20px;
     padding: 1em;
@@ -60,30 +73,50 @@ label {
     background-color: var(--color-dark);
 }
 
-label + .check-input {
-    display:flex;
-    flex-direction:row;
-}
-
-.check-input{
-
-}
-
-input::placeholder {
-    opacity: .8;
-}
-
 input:focus {
     outline: 2px dashed var(--color-light);
 }
 
 .btn {
-    min-width: fit-content;
-    width: 20%;
-    align-self: end;
+    min-width: 100px;
+    max-width: 250px;
     background-color: var(--color-highlight);
     padding: 8px;
     border-radius: 20px;
     border: 0px;
     cursor: pointer;
+    justify-self: flex-end;
+    flex: 60%;
+}
+
+i {
+    font-size: 32px;
+}
+
+.input-container + .check {
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.check-input[type="checkbox"] {
+  display: none;
+}
+
+.check i {
+  display: inline-block;
+  transition: .125s;
+  opacity: .6;
+}
+
+.on {
+    color:#ECECEC;
+    transform: scale(1.2);
+    opacity: 1 !important;
+    transition: .125s;
+}
+
+#sex-icon {
+    transform: scale(1.2);
+    opacity: 1;
+    transition: .125s;
 }
