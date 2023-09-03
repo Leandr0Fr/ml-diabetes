@@ -146,6 +146,9 @@
             }
 
             console.log(formData);
+            fetch('/predict', {method: 'POST',body: formData,})
+      .then(response => console.log(response.json())) // Puedes manejar la respuesta aquí
+      .catch(error => console.error('Error:', error));
         });
     </script>
 </body>

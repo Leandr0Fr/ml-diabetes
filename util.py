@@ -1,11 +1,13 @@
 #estatura en centimetros y peso en kg
-def imc(height, weight):
-    if weight <= 0 or height <= 0:
+def bmi(height, weight):
+    h = int(height)
+    w = int(weight)
+    if w <= 0 or h <= 0:
         raise ValueError("El peso y la altura deben ser valores positivos.")
-    return weight / (height ** 2)
+    return w / (h ** 2)
 
-def obtener_grupo(edad): # Falta conseguir la edad desde el formulario
-    
+def obtener_grupo(e): # Falta conseguir la edad desde el formulario
+    edad = int(e)
     grupo = None
 
     if edad <0:

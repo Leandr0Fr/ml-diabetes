@@ -6,10 +6,7 @@ file = 'model/modelo_1.3.0.joblib'
 # Cargar el modelo utilizando joblib
 model = joblib.load(file)
 
-def model_predict():
-    #Aca falta definir como retornar el resultado
-    #Retornamos solo el resultado o que onda
-    form= [[0, 1,1,28,0,0, 1, 0,0,0, 0, 0, 0, 0, 12]]
-    predicted = model.predict_proba(form)
+def model_predict(list):
+    predicted = model.predict_proba(list)
     result =  predicted[:, 1][0] * 100
-    return result
+    return result  
