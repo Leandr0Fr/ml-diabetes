@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="fa-solid fa-heart">Formulario de Datos de Salud</title>
+    <link rel="stylesheet" href="./static/styles.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 
     <script src="https://kit.fontawesome.com/2bf843a204.js" crossorigin="anonymous"></script>
@@ -17,98 +18,98 @@
                 <section class="input-container">
                     <label for="Height">Altura en centímetros:</label>
                     <i class="fa-solid fa-person"></i>
-                    <input class="field-input" type="number" name="Height">
+                    <input class="field-input" type="number" name="Height" min="1">
                 </section>
 
                 <section class="input-container">
                     <label for="Weight">Peso en kilogramos:</label>
                     <i class="fa-solid fa-weight-scale"></i>
-                    <input class="field-input" type="number" name="Weight">
+                    <input class="field-input" type="number" name="Weight" min="1">
                 </section>
 
                 <section class="input-container">
                     <label for="Age">Edad:</label>
                     <i class="fa-regular fa-hourglass-half"></i>
-                    <input class="field-input" type="number" name="Age">
+                    <input class="field-input" type="number" name="Age" min="0">
                 </section>
 
                 <section class="input-container">
                     <label for="PhysHlth">Salud física buena en los últimos 30 días:</label>
                     <i class="fa-solid fa-calendar-days"></i>
-                    <input class="field-input" type="number" name="PhysHlth">
+                    <input class="field-input" type="number" name="PhysHlth" min="0" max="30">
                 </section>
             </div>
 
             <section class="input-container check">
                 <label for="Sex" class="">Sexo de nacimiento:</label>
                 <i id="sex-icon" class="fa-solid fa-venus"></i>
-                <input class="check-input" type="checkbox" name="Sex" value="0">
+                <input class="check-input" type="number" name="Sex" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="HighBP">Presión arterial alta:</label>
                 <i class="fa-solid fa-heart-pulse"></i>
-                <input class="check-input" type="checkbox" name="HighBP" value="0">
+                <input class="check-input" type="number" name="HighBP" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="HighChol">Colesterol alto:</label>
                 <i class="fa-solid fa-droplet"></i>
-                <input class="check-input"  type="checkbox" name="HighChol" value="0">
+                <input class="check-input"  type="number" name="HighChol" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="CholCheck">Control de colesterol:</label>
                 <i class="fa-solid fa-notes-medical"></i>
-                <input class="check-input" type="checkbox" name="CholCheck" value="0">
+                <input class="check-input" type="number" name="CholCheck" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="Smoker">Fumador:</label>
                 <i class="fa-solid fa-smoking"></i>
-                <input class="check-input" type="checkbox" name="Smoker" value="0">
+                <input class="check-input" type="number" name="Smoker" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="Stroke">Derrame cerebral:</label>
                 <i class="fa-solid fa-brain"></i>
-                <input class="check-input" type="checkbox" name="Stroke" value="0">
+                <input class="check-input" type="number" name="Stroke" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="HeartDiseaseorAttack">Enfermedad cardíaca o ataque al corazón:</label>
                 <i class="fa-solid fa-heart-circle-exclamation"></i>
-                <input class="check-input" type="checkbox" name="HeartDiseaseorAttack" value="0">
+                <input class="check-input" type="number" name="HeartDiseaseorAttack" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="PhysActivity">Actividad física:</label>
                 <i class="fa-solid fa-person-running"></i>
-                <input class="check-input" type="checkbox" name="PhysActivity" value="0">
+                <input class="check-input" type="number" name="PhysActivity" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="Fruits">Consumo de frutas:</label>
                 <i class="fa-solid fa-apple-whole"></i>
-                <input class="check-input" type="checkbox" name="Fruits" value="0">
+                <input class="check-input" type="number" name="Fruits" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="Veggies">Consumo de verduras:</label>
                 <i class="fa-solid fa-carrot"></i>
-                <input class="check-input" type="checkbox" name="Veggies" value="0">
+                <input class="check-input" type="number" name="Veggies" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="HvyAlcoholConsump">Consumo de alcohol excesivo:</label>
                 <i class="fa-solid fa-wine-bottle"></i>
-                <input class="check-input" type="checkbox" name="HvyAlcoholConsump" value="0">
+                <input class="check-input" type="number" name="HvyAlcoholConsump" value="0">
             </section>
 
             <section class="input-container check">
                 <label for="DiffWalk">Dificultad para caminar o subir escaleras:</label>
                 <i class="fa-solid fa-stairs"></i>
-                <input class="check-input" type="checkbox" name="DiffWalk" value="0">
+                <input class="check-input" type="number" name="DiffWalk" value="0">
             </section>
 
             <input class="btn" type="submit" value="Obtener resultado">
@@ -127,28 +128,6 @@
                 else
                     icon.classList.toggle('on');
             })
-        });
-
-        let btn = document.querySelector('.btn');
-        btn.addEventListener('click', e =>{
-            e.preventDefault()
-            const formulario = document.querySelector('.form');
-            let elementos = formulario.elements;
-            let formData = {};
-
-            // Recorre todos los elementos del formulario
-            for (let i = 0; i < elementos.length; i++) {
-                let elemento = elementos[i];
-                if (elemento.type !== "submit") {
-                // Agrega el valor del elemento al objeto formData
-                formData[elemento.name] = elemento.value;
-                }
-            }
-
-            console.log(formData);
-            fetch('/predict', {method: 'POST',body: formData,})
-      .then(response => console.log(response.json())) // Puedes manejar la respuesta aquí
-      .catch(error => console.error('Error:', error));
         });
     </script>
 </body>
