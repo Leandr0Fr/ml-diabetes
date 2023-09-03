@@ -3,61 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos de Salud</title>
+    <title class="fa-solid fa-heart">Formulario de Datos de Salud</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/2bf843a204.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <main class="form-box">
         <h1>Formulario de Datos de Salud</h1>
         <form class="form" action="/predict" method="POST">
+            <section class="input-container">
+                <label for="Height">Altura en centímetros:</label>
+                <i class="fa-solid fa-person"></i>
+                <input class="field-input" type="number" name="Height">
+            </section>
 
-            <label for="BMI">Índice de masa corporal (BMI):</label>
-            <input class="field-input" type="number" name="BMI"><br>
+            <section class="input-container">
+                <label for="Weight">Peso en kilogramos:</label>
+                <i class="fa-solid fa-weight-scale"></i>
+                <input class="field-input" type="number" name="Weight">
+            </section>
 
-            <label for="Age">Edad:</label>
-            <input class="field-input" type="number" name="Age"><br>
+            <section class="input-container">
+                <label for="Age">Edad:</label>
+                <i class="fa-regular fa-hourglass-half"></i>
+                <input class="field-input" type="number" name="Age">
+            </section>
 
-            <label for="PhysHlth">Salud física:</label>
-            <input class="field-input" type="number" name="PhysHlth"><br>
+            <section class="input-container">
+                <label for="PhysHlth">Salud física buena en los últimos 30 días:</label>
+                <i class="fa-solid fa-calendar-days"></i>
+                <input class="field-input" type="number" name="PhysHlth">
+            </section>
 
-            <label for="Sex">Género:</label>
-            <input class="field-input" type="text" name="Sex"><br>
+            <section class="input-container check">
+                <label for="Sex" class="">Sexo de nacimiento:</label>
+                <i id="sex-icon" class="fa-solid fa-venus"></i>
+                <input class="check-input" type="checkbox" name="Sex" value="0">
+            </section>
 
-            <label for="HighBP">Presión arterial alta:</label>
-            <input class="check-input" type="checkbox" name="HighBP"><br>
+            <section class="input-container check">
+                <label for="HighBP">Presión arterial alta:</label>
+                <i class="fa-solid fa-heart-pulse"></i>
+                <input class="check-input" type="checkbox" name="HighBP" value="0">
+            </section>
 
-            <label for="HighChol">Colesterol alto:</label>
-            <input class="check-input" type="checkbox" name="HighChol"><br>
+            <section class="input-container check">
+                <label for="HighChol">Colesterol alto:</label>
+                <i class="fa-solid fa-droplet"></i>
+                <input class="check-input"  type="checkbox" name="HighChol" value="0">
+            </section>
 
-            <label for="CholCheck">Control de colesterol:</label>
-            <input class="check-input" type="checkbox" name="CholCheck"><br>
+            <section class="input-container check">
+                <label for="CholCheck">Control de colesterol:</label>
+                <i class="fa-solid fa-notes-medical"></i>
+                <input class="check-input" type="checkbox" name="CholCheck" value="0">
+            </section>
 
-            <label for="Smoker">Fumador:</label>
-            <input class="check-input" type="checkbox" name="Smoker"><br>
+            <section class="input-container check">
+                <label for="Smoker">Fumador:</label>
+                <i class="fa-solid fa-smoking"></i>
+                <input class="check-input" type="checkbox" name="Smoker" value="0">
+            </section>
 
-            <label for="Stroke">Derrame cerebral:</label>
-            <input class="check-input" type="checkbox" name="Stroke"><br>
+            <section class="input-container check">
+                <label for="Stroke">Derrame cerebral:</label>
+                <i class="fa-solid fa-brain"></i>
+                <input class="check-input" type="checkbox" name="Stroke" value="0">
+            </section>
 
-            <label for="HeartDiseaseorAttack">Enfermedad cardíaca o ataque al corazón:</label>
-            <input class="check-input" type="checkbox" name="HeartDiseaseorAttack"><br>
+            <section class="input-container check">
+                <label for="HeartDiseaseorAttack">Enfermedad cardíaca o ataque al corazón:</label>
+                <i class="fa-solid fa-heart-circle-exclamation"></i>
+                <input class="check-input" type="checkbox" name="HeartDiseaseorAttack" value="0">
+            </section>
 
-            <label for="PhysActivity">Actividad física:</label>
-            <input class="check-input" type="checkbox" name="PhysActivity"><br>
+            <section class="input-container check">
+                <label for="PhysActivity">Actividad física:</label>
+                <i class="fa-solid fa-person-running"></i>
+                <input class="check-input" type="checkbox" name="PhysActivity" value="0">
+            </section>
 
-            <label for="Fruits">Consumo de frutas:</label>
-            <input class="check-input" type="checkbox" name="Fruits"><br>
+            <section class="input-container check">
+                <label for="Fruits">Consumo de frutas:</label>
+                <i class="fa-solid fa-apple-whole"></i>
+                <input class="check-input" type="checkbox" name="Fruits" value="0">
+            </section>
 
-            <label for="Veggies">Consumo de verduras:</label>
-            <input class="check-input" type="checkbox" name="Veggies"><br>
+            <section class="input-container check">
+                <label for="Veggies">Consumo de verduras:</label>
+                <i class="fa-solid fa-carrot"></i>
+                <input class="check-input" type="checkbox" name="Veggies" value="0">
+            </section>
 
-            <label for="HvyAlcoholConsump">Consumo de alcohol excesivo:</label>
-            <input class="check-input" type="checkbox" name="HvyAlcoholConsump"><br>
+            <section class="input-container check">
+                <label for="HvyAlcoholConsump">Consumo de alcohol excesivo:</label>
+                <i class="fa-solid fa-wine-bottle"></i>
+                <input class="check-input" type="checkbox" name="HvyAlcoholConsump" value="0">
+            </section>
 
-            <label for="DiffWalk">Dificultad para caminar:</label>
-            <input class="check-input" type="checkbox" name="DiffWalk"><br>
+            <section class="input-container check">
+                <label for="DiffWalk">Dificultad para caminar o subir escaleras:</label>
+                <i class="fa-solid fa-stairs"></i>
+                <input class="check-input" type="checkbox" name="DiffWalk" value="0">
+            </section>
 
             <input class="btn" type="submit" value="Enviar">
         </form>
     </main>
+    <script>
+        const check_inputs = document.querySelectorAll(".input-container + .check");
+        check_inputs.forEach(check => {
+            check.addEventListener('click', () => {
+                let icon = check.querySelector("i");
+                console.log(check)
+                check.value = (check.value == 0 ? 1 : 0);
+
+                if(icon === document.getElementById('sex-icon')) 
+                    icon.classList.toggle('fa-mars')
+                else
+                    icon.classList.toggle('on');
+            })
+        });
+
+        let btn = document.querySelector('.btn');
+        btn.addEventListener('click', e =>{
+            e.preventDefault()
+            const formulario = document.querySelector('.form');
+            let elementos = formulario.elements;
+            let formData = {};
+
+            // Recorre todos los elementos del formulario
+            for (let i = 0; i < elementos.length; i++) {
+                let elemento = elementos[i];
+                if (elemento.type !== "submit") {
+                // Agrega el valor del elemento al objeto formData
+                formData[elemento.name] = elemento.value;
+                }
+            }
+
+            console.log(formData);
+        });
+    </script>
 </body>
 </html>
