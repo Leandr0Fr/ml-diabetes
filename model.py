@@ -8,5 +8,5 @@ model = joblib.load(file)
 
 def model_predict(list):
     predicted = model.predict_proba(list)
-    result =  f"{predicted[:, 1][0] * 100:.1f}%"
-    return result  
+    result =  f"{predicted[:, 1][0] * 100:.1f}"
+    return result

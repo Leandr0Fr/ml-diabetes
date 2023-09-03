@@ -32,7 +32,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 600px;
+    min-width: 200px;
     max-width: 1500px;
     margin: 0px auto ;
 }
@@ -41,7 +41,6 @@ h1 {
     padding: 16px;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     background-color: var(--color-darker);
     border-radius: 20px;
 }
@@ -61,6 +60,7 @@ h1 {
     flex: 20%;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--color-darker);
 }
 
 label {
@@ -68,15 +68,18 @@ label {
     align-self: center;
     flex:60%;
     padding: 16px;
+    text-align: center;
 }
 
 .field-input {
-    margin: .5em 0 2em 0;
+    margin: 4px 0 8px 0;
     border-radius: 20px;
     padding: 1em;
-    min-width: 300px;
+    min-width: 10%;
+    max-width: 50%;
     border: 0;
     background-color: var(--color-dark);
+    text-align: center;
 }
 
 input:focus {
@@ -100,10 +103,16 @@ i {
     font-size: 32px;
 }
 
+.non-check .input-container {
+    min-width: calc(50% - 10px);
+    margin: 5px;
+}
+
 .input-container.check, .check label {
     cursor: pointer;
     padding-bottom: 20px;
 }
+
 
 .check-input[type="number"] {
   display: none;
@@ -114,16 +123,40 @@ i {
   transition: .125s;
   opacity: .6;
 }
+p {
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+}
 
 .on {
     color:#ECECEC;
-    transform: scale(1.2);
+    transform: scale(1.15);
     opacity: 1 !important;
     transition: .125s;
 }
 
 #sex-icon {
-    transform: scale(1.2);
+    transform: scale(1.15);
     opacity: 1;
     transition: .125s;
+}
+
+.fa-venus {
+    color: red;
+}
+
+.fa-mars {
+    color: slateblue;
+}
+
+.input-container.check:hover {
+    filter: brightness(1.1);
+}
+
+@media (min-width: 520px) {
+    .non-check .input-container {
+        min-width: calc(24% - 5px);
+    }
+    
 }

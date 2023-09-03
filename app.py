@@ -7,7 +7,7 @@ app.static_folder = 'templates/static'
 
 @app.route("/")
 def home():
-    return render_template("index.html", Diabetes = "Posibilidad de Diabetes")
+    return render_template("index.html", Diabetes = "Diagnóstico de Diabetes")
 
 @app.route('/predict', methods=['GET', 'POST'])
 def index():
@@ -28,8 +28,8 @@ def index():
             request.form.get('DiffWalk'),  
             request.form.get('Sex'),
             obtain_group(request.form.get('Age'))]]
-            result = str(model_predict(form))
-            return render_template('index.html', Diabetes = "Posibilidad del " + result)
+            result = model_predict(form)
+            return result
     return render_template('form.html')
 
 

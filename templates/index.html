@@ -112,20 +112,6 @@
             <input class="btn" type="submit" value="Obtener resultado">
         </form>
     </main>
-    <script>
-        const check_inputs = document.querySelectorAll(".input-container.check");
-        check_inputs.forEach(check_container => {
-            check_container.addEventListener('click', () => {
-                let icon = check_container.querySelector("i");
-                let check = check_container.querySelector("input");
-                check.value = (check.value == "0" ? "1" : "0");
-
-                if(icon === document.getElementById('sex-icon')) 
-                    icon.classList.toggle('fa-mars')
-                else
-                    icon.classList.toggle('on');
-            })
-        });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
