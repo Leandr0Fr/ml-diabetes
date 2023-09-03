@@ -7,19 +7,9 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-    @app.route('/predict', methods=['POST'])
-    def predict():
-     #Obtener los datos del formulario
-     #Vemos si retornamos el mismo html modificando una variable
-     #O otro html con el resultado y demas
-     result = str(model_predict())
-     return result
-
 # Inicializa dos listas: una para las claves (nombres de las variables) y otra para los valores de las variables
 keys_list = []
 values_list = []
-
-app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -52,13 +42,6 @@ def index():
         return render_template('results.html', variables=variables)
     return render_template('form.html')
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    #Obtener los datos del formulario
-    #Vemos si retornamos el mismo html modificando una variable
-    #O otro html con el resultado y demas
-    result = str(model_predict())
-    return result
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
