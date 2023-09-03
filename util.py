@@ -6,39 +6,39 @@ def bmi(height, weight):
         raise ValueError("El peso y la altura deben ser valores positivos.")
     return w / (h ** 2)
 
-def obtener_grupo(e): # Falta conseguir la edad desde el formulario
-    edad = int(e)
-    grupo = None
+def obtain_group(a):
+    age = int(a)
+    group = None
 
-    if edad <0:
+    if age <0:
         raise ValueError ("La edad debe ser válida")
-    elif 0 <= edad < 18:
+    elif 0 <= age < 18:
         return 0
-    elif 18 <= edad <= 24:
-        grupo = 1
-    elif 25 <= edad <= 29:
-        grupo = 2
-    elif 30 <= edad <= 34:
-        grupo = 3
-    elif 35 <= edad <= 39:
-        grupo = 4
-    elif 40 <= edad <= 44:
-        grupo = 5
-    elif 45 <= edad <= 49:
-        grupo = 6
-    elif 50 <= edad <= 54:
-        grupo = 7
-    elif 55 <= edad <= 59:
-        grupo = 8
-    elif 60 <= edad <= 64:
-        grupo = 9
-    elif 65 <= edad <= 69:
-        grupo = 10
-    elif 70 <= edad <= 74:
-        grupo = 11
-    elif 75 <= edad <= 79:
-        grupo = 12
+    elif 18 <= age <= 24:
+        group = 1
+    elif 25 <= age <= 29:
+        group = 2
+    elif 30 <= age <= 34:
+        group = 3
+    elif 35 <= age <= 39:
+        group = 4
+    elif 40 <= age <= 44:
+        group = 5
+    elif 45 <= age <= 49:
+        group = 6
+    elif 50 <= age <= 54:
+        group = 7
+    elif 55 <= age <= 59:
+        group = 8
+    elif 60 <= age <= 64:
+        group = 9
+    elif 65 <= age <= 69:
+        group = 10
+    elif 70 <= age <= 74:
+        group = 11
+    elif 75 <= age <= 79:
+        group = 12
     else:
-        grupo = 13
+        group = 13
     
-    return grupo
+    return group
