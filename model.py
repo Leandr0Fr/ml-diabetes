@@ -1,7 +1,7 @@
 import joblib
 
 # Nombre del archivo donde se encuentra el modelo guardado
-file = 'model/modelo_entrenado.joblib'
+file = 'model/modelo_1.3.0.joblib'
 
 # Cargar el modelo utilizando joblib
 model = joblib.load(file)
