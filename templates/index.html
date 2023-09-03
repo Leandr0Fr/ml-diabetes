@@ -10,31 +10,33 @@
 </head>
 <body>
     <main class="form-box">
-        <h1>Formulario de Datos de Salud</h1>
+        <h1>Pseudo-Diagnóstico de Diabetes</h1>
         <form class="form" action="/predict" method="POST">
-            <section class="input-container">
-                <label for="Height">Altura en centímetros:</label>
-                <i class="fa-solid fa-person"></i>
-                <input class="field-input" type="number" name="Height">
-            </section>
+            <div class="non-check">
+                <section class="input-container">
+                    <label for="Height">Altura en centímetros:</label>
+                    <i class="fa-solid fa-person"></i>
+                    <input class="field-input" type="number" name="Height">
+                </section>
 
-            <section class="input-container">
-                <label for="Weight">Peso en kilogramos:</label>
-                <i class="fa-solid fa-weight-scale"></i>
-                <input class="field-input" type="number" name="Weight">
-            </section>
+                <section class="input-container">
+                    <label for="Weight">Peso en kilogramos:</label>
+                    <i class="fa-solid fa-weight-scale"></i>
+                    <input class="field-input" type="number" name="Weight">
+                </section>
 
-            <section class="input-container">
-                <label for="Age">Edad:</label>
-                <i class="fa-regular fa-hourglass-half"></i>
-                <input class="field-input" type="number" name="Age">
-            </section>
+                <section class="input-container">
+                    <label for="Age">Edad:</label>
+                    <i class="fa-regular fa-hourglass-half"></i>
+                    <input class="field-input" type="number" name="Age">
+                </section>
 
-            <section class="input-container">
-                <label for="PhysHlth">Salud física buena en los últimos 30 días:</label>
-                <i class="fa-solid fa-calendar-days"></i>
-                <input class="field-input" type="number" name="PhysHlth">
-            </section>
+                <section class="input-container">
+                    <label for="PhysHlth">Salud física buena en los últimos 30 días:</label>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input class="field-input" type="number" name="PhysHlth">
+                </section>
+            </div>
 
             <section class="input-container check">
                 <label for="Sex" class="">Sexo de nacimiento:</label>
@@ -108,16 +110,16 @@
                 <input class="check-input" type="checkbox" name="DiffWalk" value="0">
             </section>
 
-            <input class="btn" type="submit" value="Enviar">
+            <input class="btn" type="submit" value="Obtener resultado">
         </form>
     </main>
     <script>
-        const check_inputs = document.querySelectorAll(".input-container + .check");
-        check_inputs.forEach(check => {
-            check.addEventListener('click', () => {
-                let icon = check.querySelector("i");
-                console.log(check)
-                check.value = (check.value == 0 ? 1 : 0);
+        const check_inputs = document.querySelectorAll(".input-container.check");
+        check_inputs.forEach(check_container => {
+            check_container.addEventListener('click', () => {
+                let icon = check_container.querySelector("i");
+                let check = check_container.querySelector("input");
+                check.value = (check.value == "0" ? "1" : "0");
 
                 if(icon === document.getElementById('sex-icon')) 
                     icon.classList.toggle('fa-mars')
