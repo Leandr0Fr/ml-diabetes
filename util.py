@@ -1,6 +1,6 @@
 #estatura en centimetros y peso en kg
 def bmi(height, weight):
-    h = int(height)
+    h = float(height) / 100
     w = int(weight)
     if w <= 0 or h <= 0:
         raise ValueError("El peso y la altura deben ser valores positivos.")
